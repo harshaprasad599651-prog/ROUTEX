@@ -1,0 +1,36 @@
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# ---------- Virtual environments ----------
+venv/
+.venv/
+env/
+
+# ---------- Jupyter ----------
+.ipynb_checkpoints/
+
+# ---------- IDE / OS files ----------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ---------- Environment / secrets ----------
+.env
+
+# ---------- Data ----------
+# The dataset is large (40,000+ rows) and can be downloaded again,
+# so it is not committed. Each member downloads it into data/raw/.
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# ---------- Trained models ----------
+# Model files can be large; they are re-created by running the training code.
+models/*
+!models/.gitkeep
