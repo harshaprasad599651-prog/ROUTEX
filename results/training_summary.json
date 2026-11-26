@@ -1,0 +1,88 @@
+{
+  "target": "comb08",
+  "random_state": 42,
+  "split": {
+    "test_size": 0.2,
+    "train_rows": 33994,
+    "test_rows": 8499
+  },
+  "cross_validation": {
+    "folds": 5,
+    "shuffle": true,
+    "selection_metric": "RMSE"
+  },
+  "features": [
+    "year",
+    "displ",
+    "cylinders",
+    "trans_speeds",
+    "passenger_volume",
+    "luggage_volume",
+    "turbo",
+    "supercharger",
+    "is_cvt",
+    "phevBlended",
+    "make",
+    "VClass",
+    "drive",
+    "trany",
+    "trans_type",
+    "trans_dscr",
+    "fuelType",
+    "fuelType1",
+    "fuelType2",
+    "atvType",
+    "startStop",
+    "eng_dscr"
+  ],
+  "models": {
+    "Linear Regression": {
+      "file": "models/linear_regression.joblib",
+      "estimator": "TransformedTargetRegressor(func=<ufunc 'log'>, inverse_func=<ufunc 'exp'>,\n                           regressor=LinearRegression())",
+      "best_params": {
+        "model": "TransformedTargetRegressor(func=<ufunc 'log'>, inverse_func=<ufunc 'exp'>,\n                           regressor=LinearRegression())"
+      },
+      "search_time_s": 7.1,
+      "train_rmse": 1.8073,
+      "cv_rmse": 1.8306,
+      "test_rmse": 1.8233,
+      "test_mae": 1.2831,
+      "test_r2": 0.8849
+    },
+    "Decision Tree": {
+      "file": "models/decision_tree.joblib",
+      "estimator": "DecisionTreeRegressor(max_depth=24, random_state=42)",
+      "best_params": {
+        "model__max_depth": 24,
+        "model__min_samples_leaf": 1
+      },
+      "search_time_s": 116.7,
+      "train_rmse": 0.3697,
+      "cv_rmse": 1.048,
+      "test_rmse": 0.9391,
+      "test_mae": 0.4731,
+      "test_r2": 0.9695
+    },
+    "Random Forest": {
+      "file": "models/random_forest.joblib",
+      "estimator": "RandomForestRegressor(max_features=0.6, n_estimators=300, n_jobs=-1,\n                      random_state=42)",
+      "best_params": {
+        "model__max_features": 0.6,
+        "model__min_samples_leaf": 1
+      },
+      "search_time_s": 435.3,
+      "train_rmse": 0.3615,
+      "cv_rmse": 0.8144,
+      "test_rmse": 0.7523,
+      "test_mae": 0.4764,
+      "test_r2": 0.9804
+    }
+  },
+  "baseline_test_rmse": 5.3761,
+  "versions": {
+    "python": "3.14.5",
+    "scikit-learn": "1.9.1",
+    "pandas": "3.1.1",
+    "numpy": "2.5.5"
+  }
+}
