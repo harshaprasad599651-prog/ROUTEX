@@ -1,0 +1,4 @@
+model,random_CV_RMSE (nb 04),grouped_CV_RMSE,grouped_CV_RMSE_std,random_CV_R2 (nb 04),grouped_CV_R2,grouped_CV_MAE,RMSE increase
+Linear Regression,1.83064,1.90307,0.04753,0.88192,0.87204,1.33393,0.07243
+Decision Tree,1.04799,1.71915,0.08274,0.96130,0.89536,0.96828,0.67116
+Random Forest,0.81439,1.29608,0.07045,0.97663,0.94048,0.81258,0.48169
