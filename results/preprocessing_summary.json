@@ -1,0 +1,167 @@
+{
+  "source": "data/raw/vehicles.csv",
+  "target": "comb08",
+  "random_state": 42,
+  "test_size": 0.2,
+  "row_counts": {
+    "rows_raw": 42774,
+    "rows_removed_pure_ev": 241,
+    "rows_removed_duplicates": 40,
+    "rows_clean": 42493,
+    "n_features": 22,
+    "train": 33994,
+    "test": 8499
+  },
+  "electric_vehicle_decision": "Excluded pure EVs (fuelType1 == 'Electricity'): their comb08 is MPGe, not MPG. Hybrids and plug-in hybrids are kept (their comb08 is petrol MPG).",
+  "outlier_decision": "Kept: genuine hybrids, diesels and supercars, not data errors.",
+  "features": {
+    "numerical": [
+      "year",
+      "displ",
+      "cylinders",
+      "trans_speeds",
+      "passenger_volume",
+      "luggage_volume"
+    ],
+    "binary": [
+      "turbo",
+      "supercharger",
+      "is_cvt",
+      "phevBlended"
+    ],
+    "categorical": [
+      "make",
+      "VClass",
+      "drive",
+      "trany",
+      "trans_type",
+      "trans_dscr",
+      "fuelType",
+      "fuelType1",
+      "fuelType2",
+      "atvType",
+      "startStop",
+      "eng_dscr"
+    ]
+  },
+  "n_columns_after_encoding": 267,
+  "dropped_columns": {
+    "leakage_required": {
+      "reason": "Target leakage (named in the project brief): another form of the same fuel-economy measurement as comb08.",
+      "columns": [
+        "city08",
+        "highway08",
+        "UCity",
+        "UHighway",
+        "fuelCost08",
+        "barrels08",
+        "co2TailpipeGpm",
+        "youSaveSpend"
+      ]
+    },
+    "leakage_additional": {
+      "reason": "Target leakage (found during inspection): unrounded MPG values, CO2 and EPA scores calculated from fuel economy, and the gas-guzzler tax flag, which is assigned from the MPG figure itself.",
+      "columns": [
+        "comb08U",
+        "city08U",
+        "highway08U",
+        "co2",
+        "feScore",
+        "ghgScore",
+        "guzzler"
+      ]
+    },
+    "leakage_alternative_fuel": {
+      "reason": "Target leakage: fuel-economy results for a vehicle's second fuel (E85, electricity, CNG...). They come from the same test as comb08.",
+      "columns": [
+        "cityA08",
+        "cityA08U",
+        "highwayA08",
+        "highwayA08U",
+        "combA08",
+        "combA08U",
+        "UCityA",
+        "UHighwayA",
+        "barrelsA08",
+        "fuelCostA08",
+        "co2A",
+        "co2TailpipeAGpm",
+        "ghgScoreA"
+      ]
+    },
+    "leakage_electric": {
+      "reason": "Target leakage: electricity consumption, charge-depleting results and driving range. These are outcomes of the efficiency test, not vehicle specs.",
+      "columns": [
+        "cityE",
+        "highwayE",
+        "combE",
+        "cityCD",
+        "highwayCD",
+        "combinedCD",
+        "cityUF",
+        "highwayUF",
+        "combinedUF",
+        "phevCity",
+        "phevHwy",
+        "phevComb",
+        "range",
+        "rangeCity",
+        "rangeHwy",
+        "rangeCityA",
+        "rangeHwyA",
+        "rangeA"
+      ]
+    },
+    "identifier": {
+      "reason": "Identifier: unique or near-unique codes that would let a model memorise records instead of learning general patterns.",
+      "columns": [
+        "id",
+        "engId",
+        "model"
+      ]
+    },
+    "metadata": {
+      "reason": "Record metadata about the fueleconomy.gov website, not the vehicle.",
+      "columns": [
+        "createdOn",
+        "modifiedOn",
+        "mpgData"
+      ]
+    },
+    "constant": {
+      "reason": "Constant: the same value in every row, so it carries no information.",
+      "columns": [
+        "charge120"
+      ]
+    },
+    "sparse_or_redundant": {
+      "reason": "Almost always empty after excluding pure EVs (EV charging / motor details), or duplicates another kept column (mfrCode duplicates make).",
+      "columns": [
+        "charge240",
+        "charge240b",
+        "c240Dscr",
+        "c240bDscr",
+        "evMotor",
+        "mfrCode"
+      ]
+    },
+    "replaced_by_engineered": {
+      "reason": "Replaced by an engineered feature that keeps the same information in a cleaner form (see engineer_features).",
+      "columns": [
+        "pv2",
+        "pv4",
+        "hpv",
+        "lv2",
+        "lv4",
+        "hlv",
+        "tCharger",
+        "sCharger"
+      ]
+    }
+  },
+  "versions": {
+    "python": "3.14.5",
+    "pandas": "3.1.1",
+    "scikit-learn": "1.9.1"
+  }
+}
