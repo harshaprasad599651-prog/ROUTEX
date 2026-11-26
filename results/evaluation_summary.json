@@ -1,0 +1,72 @@
+{
+  "test_rows": 8499,
+  "models_evaluated": {
+    "Linear Regression": "models/linear_regression.joblib",
+    "Decision Tree": "models/decision_tree.joblib",
+    "Random Forest": "models/random_forest.joblib"
+  },
+  "test_metrics": {
+    "Linear Regression": {
+      "MAE": 1.2831,
+      "MSE": 3.3245,
+      "RMSE": 1.8233,
+      "R2": 0.8849
+    },
+    "Decision Tree": {
+      "MAE": 0.4731,
+      "MSE": 0.8819,
+      "RMSE": 0.9391,
+      "R2": 0.9695
+    },
+    "Random Forest": {
+      "MAE": 0.4764,
+      "MSE": 0.5659,
+      "RMSE": 0.7523,
+      "R2": 0.9804
+    },
+    "Baseline (training mean)": {
+      "MAE": 4.03,
+      "MSE": 28.9028,
+      "RMSE": 5.3761,
+      "R2": -0.0007
+    }
+  },
+  "bootstrap": {
+    "resamples": 1000,
+    "random_state": 42,
+    "rmse_diff_dt_minus_rf_mean": 0.1868,
+    "rmse_diff_dt_minus_rf_95ci": [
+      0.1552,
+      0.224
+    ]
+  },
+  "grouped_cv_rmse": {
+    "Linear Regression": 1.9031,
+    "Decision Tree": 1.7191,
+    "Random Forest": 1.2961
+  },
+  "top5_permutation_features": {
+    "Linear Regression": [
+      "displ",
+      "VClass",
+      "luggage_volume",
+      "passenger_volume",
+      "make"
+    ],
+    "Decision Tree": [
+      "displ",
+      "atvType",
+      "year",
+      "drive",
+      "fuelType"
+    ],
+    "Random Forest": [
+      "displ",
+      "atvType",
+      "year",
+      "cylinders",
+      "drive"
+    ]
+  },
+  "best_model_by_test_rmse": "Random Forest"
+}

@@ -1,0 +1,4 @@
+model,train_RMSE,test_RMSE,train_R2,test_R2,RMSE_ratio_test/train
+Linear Regression,1.80735,1.82333,0.88493,0.88489,1.00884
+Decision Tree,0.36969,0.93911,0.99519,0.96947,2.54024
+Random Forest,0.36147,0.75227,0.99540,0.98041,2.08116

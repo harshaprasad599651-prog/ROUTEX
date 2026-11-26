@@ -1,0 +1,4 @@
+model,mean (bias),median,std,share |res| <= 0.5 MPG,share |res| <= 1 MPG,share |res| <= 2 MPG,share |res| > 5 MPG
+Linear Regression,0.03053,0.00692,1.82307,0.28039,0.51324,0.81092,0.01741
+Decision Tree,-0.01404,0.00000,0.93900,0.67443,0.89716,0.96976,0.00200
+Random Forest,-0.03139,-0.00667,0.75162,0.65619,0.88022,0.97353,0.00106
