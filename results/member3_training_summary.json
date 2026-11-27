@@ -1,0 +1,94 @@
+{
+  "target": "comb08",
+  "random_state": 42,
+  "split": {
+    "train_rows": 33994,
+    "test_rows": 8499
+  },
+  "cross_validation": {
+    "folds": 5,
+    "selection_metric": "RMSE",
+    "search": "RandomizedSearchCV, 12 candidates per model"
+  },
+  "data_quality_fix": "passenger_volume < 40 cu ft -> missing",
+  "best_params": {
+    "Gradient Boosting": {
+      "estimator": "HistGradientBoostingRegressor",
+      "min_samples_leaf": 5,
+      "max_leaf_nodes": 127,
+      "max_iter": 1000,
+      "max_features": 1.0,
+      "learning_rate": 0.2,
+      "l2_regularization": 1.0
+    },
+    "XGBoost": {
+      "estimator": "XGBRegressor",
+      "subsample": 0.85,
+      "reg_lambda": 0.5,
+      "reg_alpha": 0.1,
+      "n_estimators": 1200,
+      "min_child_weight": 3,
+      "max_depth": 10,
+      "learning_rate": 0.1,
+      "colsample_bytree": 0.7
+    }
+  },
+  "best_model_by_cv": "XGBoost",
+  "test_metrics": {
+    "Linear Regression": {
+      "cv_rmse": 1.831,
+      "test_mae": 1.283,
+      "test_mse": 3.3222,
+      "test_rmse": 1.8227,
+      "test_r2": 0.885,
+      "train_rmse": 1.8078
+    },
+    "Decision Tree": {
+      "cv_rmse": 1.0588,
+      "test_mae": 0.4666,
+      "test_mse": 0.8745,
+      "test_rmse": 0.9351,
+      "test_r2": 0.9697,
+      "train_rmse": 0.3679
+    },
+    "Random Forest": {
+      "cv_rmse": 0.8138,
+      "test_mae": 0.4764,
+      "test_mse": 0.5658,
+      "test_rmse": 0.7522,
+      "test_r2": 0.9804,
+      "train_rmse": 0.3611
+    },
+    "Gradient Boosting": {
+      "cv_rmse": 0.789,
+      "test_mae": 0.4703,
+      "test_mse": 0.509,
+      "test_rmse": 0.7134,
+      "test_r2": 0.9824,
+      "train_rmse": 0.3319
+    },
+    "XGBoost": {
+      "cv_rmse": 0.7756,
+      "test_mae": 0.4828,
+      "test_mse": 0.5078,
+      "test_rmse": 0.7126,
+      "test_r2": 0.9824,
+      "train_rmse": 0.3921
+    },
+    "Baseline (training mean)": {
+      "cv_rmse": NaN,
+      "test_mae": 4.03,
+      "test_mse": 28.9028,
+      "test_rmse": 5.3761,
+      "test_r2": -0.0007,
+      "train_rmse": 5.3279
+    }
+  },
+  "member2_random_forest_benchmark_rmse": 0.752,
+  "versions": {
+    "python": "3.14.3",
+    "scikit-learn": "1.9.1",
+    "pandas": "3.1.1",
+    "xgboost": "3.4.1"
+  }
+}

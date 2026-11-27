@@ -1,0 +1,23 @@
+,Random Forest,XGBoost
+VClass,0.01330,0.02944
+atvType,0.07513,0.25693
+cylinders,0.14222,0.05330
+displ,0.45536,0.01580
+drive,0.05801,0.05026
+eng_dscr,0.00977,0.03775
+fuelType,0.01562,0.11622
+fuelType1,0.01047,0.06054
+fuelType2,0.00191,0.02675
+is_cvt,0.00394,0.00807
+luggage_volume,0.02202,0.02732
+make,0.02812,0.17394
+passenger_volume,0.02997,0.01533
+phevBlended,0.00038,0.00280
+startStop,0.03080,0.04905
+supercharger,0.00071,0.00158
+trans_dscr,0.00818,0.01688
+trans_speeds,0.01272,0.01902
+trans_type,0.00472,0.00697
+trany,0.01322,0.02632
+turbo,0.00773,0.00388
+year,0.05569,0.00186
