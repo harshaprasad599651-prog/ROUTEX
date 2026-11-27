@@ -21,3 +21,6 @@ jupyter>=1.0
 
 # XGBoost regression (Member 3)
 xgboost>=2.0
+
+# Interactive prediction prototype
+streamlit>=1.30
