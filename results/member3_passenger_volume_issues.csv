@@ -1,0 +1,10 @@
+id,year,make,model,VClass,pv2,pv4,hpv,passenger_volume,comb08,split
+26933,1984,Bitter Gmbh and Co. Kg,SC,Midsize Cars,1,0,0,1.0,13,train
+26934,1984,Bitter Gmbh and Co. Kg,SC,Midsize Cars,1,0,0,1.0,14,train
+27290,1984,Import Foreign Auto Sales Inc,1fas 410,Small Pickup Trucks 4WD,28,0,0,28.0,19,train
+7809,1991,Mercedes-Benz,190E,Compact Cars,0,4,0,4.0,17,test
+7963,1991,Mercedes-Benz,260E,Midsize Cars,0,5,0,5.0,16,test
+7964,1991,Mercedes-Benz,300E,Midsize Cars,0,5,0,5.0,15,train
+7965,1991,Porsche,928 S4,Midsize Cars,2,0,0,2.0,15,train
+7966,1991,Mercedes-Benz,230E,Midsize Cars,0,5,0,5.0,17,train
+8027,1991,Mercedes-Benz,300SEL,Large Cars,0,6,0,6.0,15,train
